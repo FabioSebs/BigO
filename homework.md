@@ -3,16 +3,17 @@
 
 \* 
 F(n) = { 
-      count = 0      FOR i = 1 to n DO
-          IF n MODULO i = 0 THEN
-             count = count + 1
-          END IF
-      END FOR
-      IF count = 2 THEN
-         RETURN PRIME
-      ELSE
-         RETURN NOT-PRIME
-      END IF
+count = 0      
+FOR i = 1 to n DO
+IF n MODULO i = 0 THEN
+count = count + 1
+END IF
+END FOR
+IF count = 2 THEN
+RETURN PRIME
+ELSE
+RETURN NOT-PRIME
+END IF
 } 
 \*
 
