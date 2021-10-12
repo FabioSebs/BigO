@@ -21,7 +21,6 @@ let linearSearch = (arr, target, i) => {
 // Binary Search
 const binarySearch = (arr, target, start, end) => {
     let mid = Math.floor((start+end)/2)
-    console.log(arr[mid], target)
     if (start>end) {return false}
     if (arr[mid] == target) { return true }
     if (arr[mid] > target) { return binarySearch(arr, target, start, mid-1) } //searches left
