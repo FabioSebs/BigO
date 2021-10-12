@@ -27,7 +27,7 @@ F(n) = F(n/3) +1
   with F(0) is 0
 \*
 
-> Answer: The Complexity is O(log base 3 of n) because in essence this function is calling itself and is considered recursion. Most recursion functions are complexity of log base 2(n) unless more complex logic is added. The reason why the base is 3 is because n is being divided by 3. When you do binary search the complexity is log base 2 becuase n is being split in half or divided by TWO. So in this case it is 3 because of (n/3)
+> Answer: The Complexity is O(log base 3 of n) because this function is calling itself and is considered recursion. Most recursion functions are complexity of log base 2(n). The reason why the base is 3 is because n is being divided by 3. When you do binary search the complexity is log base 2 becuase n is being split in half or divided by TWO. So in this case it is 3 because of n being divided by THREE.
 
 # Problem 3
 ## Calculate and EXPLAIN the complexity of function that calculate the n-th  Fibonacci number.
