@@ -35,5 +35,5 @@ F(n) = F(n/3) +1
 F(n) = F(n-1) + F(n-2)
 \*
 
-> Answer: The Complexity is O(1.6180339887^n). At first I believed the answer was log(n) because of fibonacci's recursive nature but looking at a stackoverflow thread people have mostly agreed with the answer our teacher provided. The math is explained in the thread and quite honestly I have no idea how the answer ends up resolving as the golden ratio. 
+> Answer: The Complexity is O(1.6180339887^n). The easy part is n because thats the number you give into the algorithm. The golden ratio is hard to explain because if we look at the call stack it resembles the fibonacci sequence itself. 
 
