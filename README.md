@@ -184,6 +184,12 @@ testBinary("Binary", arr, 80, 0, arr.length-1)
 ```
 Using javascript we can time these functions asynchronously for more accurate timing. We do this by making two functions that return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). They resolve the label for our console timer if the alorithm returns true. Later on we can call these promises and *.then* end the timer. 
 
+### Complexity
+Linear Search 
+>O(n)
+
+Binary Search
+>O(logn)
 
 # Last Weeks HW
 
