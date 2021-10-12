@@ -14,12 +14,14 @@ let arrayGenerator = (amount) => {
 // Linear Search
 let linearSearch = (arr, target, i) => {
     i = i || 0
-    if (arr[i] === target) { return true }
+    if (arr[i] == target) { return true }
+    if (arr.length === 1) { return false }
     return linearSearch(arr.slice(1),target)
 }
 // Binary Search
 const binarySearch = (arr, target, start, end) => {
     let mid = Math.floor((start+end)/2)
+    console.log(arr[mid], target)
     if (start>end) {return false}
     if (arr[mid] == target) { return true }
     if (arr[mid] > target) { return binarySearch(arr, target, start, mid-1) } //searches left
@@ -28,13 +30,16 @@ const binarySearch = (arr, target, start, end) => {
 
 //Creating Array
 arrayGenerator(100)
-arr.forEach((text)=>{ file.write(text + '\n') })
-file.end()
+
 
 
 //Searching Array Linearly
 console.log(linearSearch(arr,80))
-console.log(binarySearch(arr, 80, 0, arr.length-1))
+console.log(binarySearch(arr.sort((a,b)=>a-b), 80, 0, arr.length-1))
+
+//Writing Array
+arr.forEach((text)=>{ file.write(text + '\n') })
+file.end()
 
 //Testing Time
 let testLinear = (label, arr, target) => {
@@ -44,18 +49,18 @@ let testLinear = (label, arr, target) => {
 			res(label)
 		}
 		else {
-			rej("Number wasnt prime")
+			rej(": Number wasnt in the array")
 		}
 	})
 }
 let testBinary = (label, arr, target, start, mid) => {
 	return new Promise((res,rej)=>{
-		if (binarySearch(arr,target,start,mid) === true) {
+		if (binarySearch(arr.sort((a,b)=>a-b),target,start,mid) === true) {
 			console.time(label)
 			res(label)
 		}
 		else {
-			rej("Number wasnt prime")
+			rej("Not in the array")
 		}
 	})
 }
@@ -66,4 +71,4 @@ testLinear("Linear", arr, 80)
 
 testBinary("Binary", arr, 80, 0, arr.length-1)
     .then((label)=>{console.timeEnd(label)})
-    .catch((msg)=>{console.log("Binary" + msg)})
+    .catch((msg)=>{console.log("Binary: " + msg)})
